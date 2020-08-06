@@ -6,7 +6,7 @@ REGION := $(shell python3 -c 'import boto3; print(boto3.Session().region_name)')
 REGION := us-east-1
 ifndef S3_BUCKET
 ACCOUNT_ID := $(shell aws sts get-caller-identity --query Account --output text)
-S3_BUCKET = aws-serverless-shopping-cart-src-$(ACCOUNT_ID)-$(REGION)
+S3_BUCKET = aws-serverless-shopping-cart-src-$(ACCOUNT_ID)-us-east-1
 endif
 
 
